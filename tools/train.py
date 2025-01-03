@@ -293,12 +293,22 @@ def main():
     # add an attribute for visualization convenience
     model.CLASSES = datasets[0].CLASSES
     if hasattr(cfg, "plugin"):
+        print("zyx test:")
+        # custom_train_model(
+        #     model,
+        #     datasets,
+        #     cfg,
+        #     distributed=distributed,
+        #     validate=(not args.no_validate),
+        #     timestamp=timestamp,
+        #     meta=meta,
+        # )
         custom_train_model(
             model,
             datasets,
             cfg,
             distributed=distributed,
-            validate=(not args.no_validate),
+            validate= False,
             timestamp=timestamp,
             meta=meta,
         )

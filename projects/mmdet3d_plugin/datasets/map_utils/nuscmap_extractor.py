@@ -1,6 +1,10 @@
 from shapely.geometry import LineString, box, Polygon
 from shapely import ops, strtree
 
+import warnings
+from shapely.errors import ShapelyDeprecationWarning
+warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning) 
+
 import numpy as np
 from nuscenes.map_expansion.map_api import NuScenesMap, NuScenesMapExplorer
 from nuscenes.eval.common.utils import quaternion_yaw
